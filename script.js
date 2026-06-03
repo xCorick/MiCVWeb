@@ -1,4 +1,6 @@
 const boton = document.getElementById("temaBtn");
+const formulario = document.getElementById("contactoForm");
+const resultado = document.getElementById("resultado");
 
 boton.addEventListener("click", () => {
 
@@ -14,3 +16,15 @@ boton.addEventListener("click", () => {
 
 // Texto inicial del botón
 boton.textContent = "🌙 Modo Oscuro";
+
+formulario.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+
+    resultado.textContent =
+        `Gracias ${nombre}, tu mensaje ha sido recibido.`;
+
+    formulario.reset();
+});
